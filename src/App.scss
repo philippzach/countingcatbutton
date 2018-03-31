@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+//    SASS definitions
+  
+$btn-dimension: 80px;
+$primary-color: white;
+$secondary-color: black;
+@mixin debug {
+  outline: 1px solid red;
+}
+
+
+//    FLEXBOX ALIGNMENT 
+ 
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Montserrat;
+  background-color: #ffdf59;
+}
+
+
+//    BASIC styles
+
+* {
+  box-sizing: border-box
+}
+
+
+//    BUTTON styles
+
+.clap {
+  position: relative;
+  outline: 1px solid transparent;
+  border-radius: 50%;
+  border: 2px solid black;
+  width: $btn-dimension;
+  height: $btn-dimension; 
+  background: white;
+  /*radial-gradient(circle farthest-corner at center center, #ffffff 0%, #ffdf59 250%);*/
+  box-shadow: 0px 0px 50px 12px white;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50%;
+    //border: 1px solid $primary-color;
+    width: $btn-dimension - 1px;
+    height: $btn-dimension - 1px;
+  }
+  &:hover {
+   cursor: pointer;
+   border: 1px solid $secondary-color;
+   transition: border-color 0.3s ease-in;
+    &:after {
+      animation: shockwave 1s ease-in infinite;
+    } 
+  }
+  svg {
+    width: 60px;
+    fill: black;
+    stroke: $secondary-color;
+    stroke-width: 2px;
+    &.checked {
+      fill: $secondary-color;
+      stroke: black;
+      stroke-width: 1px;
+    }
+  }
+  .clap--count {
+    position: absolute;
+    top: -$btn-dimension/1.6;
+    left: $btn-dimension/4;
+    font-size: 0.8rem;
+    color: #ffdf59;
+    background: $secondary-color;
+    border-radius: 0%;
+    height: $btn-dimension/2;
+    width: $btn-dimension/2;
+    line-height: $btn-dimension/2;
+  }
+
+
+
+  .clap--count-total {
+    position: absolute;
+    font-size: 0.8rem;
+    width: $btn-dimension;
+    text-align: center;
+    left: 0;
+    top: -$btn-dimension/3.5;
+    color: $primary-color; 
+  }
+}
+
+
+@keyframes shockwave {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 2px $secondary-color;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    box-shadow: 0 0 50px darken($secondary-color, 20%), inset 0 0 10px $secondary-color;
+  }
+}
+
