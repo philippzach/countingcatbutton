@@ -97,6 +97,14 @@ body {
     fill: black;
     stroke: $secondary-color;
     stroke-width: 2px;
+    .st0{opacity:0.2;fill:#F7941E;}
+	  .st1{stroke:#000000;stroke-width:0.1703;stroke-miterlimit:10;}
+	  .st2{fill:#231F20;}
+	  .st3{opacity:0.5;}
+	  .st4{fill-rule:evenodd;clip-rule:evenodd;fill:#FFF200;}
+	  .st5{opacity:0.05;fill:#EC008C;}
+	  .st6{fill:#231F20;stroke:#000000;stroke-width:8.0073;stroke-miterlimit:10;}
+	  .st7{fill:#231F20;stroke:#231F20;stroke-width:0.1705;stroke-miterlimit:10;}
     &.checked {
       fill: $secondary-color;
       stroke: black;
